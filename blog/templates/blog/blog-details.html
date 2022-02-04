@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+                                                                                                                                        
+<div class="container">
+
+
+
+<h1>{{selectedBlog.title}}</h1>
+<hr>
+
+<p>
+
+{{selectedBlog.description|safe}}
+
+</p>
+
+</div>
+
+{% endblock %}

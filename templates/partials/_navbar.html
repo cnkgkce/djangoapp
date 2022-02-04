@@ -1,0 +1,46 @@
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+    <div class="container">
+        <a href="{% url 'home' %}" class="navbar-brand">Blog App</a>
+        <div class="collapse navbar-collapse" id="navbar">
+
+         <ul class="navbar-nav me-auto">
+
+            <li class="nav-item">
+            <a href="{% url 'home' %}" class="nav-link">Ana sayfa</a>
+            </li>
+
+            <li class="nav-item">
+            <a href="{% url 'blogs' %}" class="nav-link">Bloglar</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto">
+
+            {% if user.is_authenticated %}
+            
+            <li class="nav-item">
+                <a href="{% url 'logout' %}" class="nav-link">Çıkış yap</a>
+            </li>
+       
+
+            <li class="nav-item">
+                <a href="" class="nav-link">Hoşgeldin, {{ user.get_full_name|title }}</a>
+            </li>
+            {% else %}
+            
+            <li class="nav-item">
+                <a href="{% url 'login' %}" class="nav-link">Giriş yap</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="" class="nav-link">Kayıt ol</a>
+            </li>
+      
+        </ul>
+
+
+        {% endif %}
+
+</div>
+</div>
+</nav>

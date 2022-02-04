@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="container mt-3">
+    <div class="row">
+    
+    <div class="col-3">
+         {% include 'blog/partials/_categories.html' %}
+    </div>
+    
+    <div class="col-9">
+    <h1>All Blogs</h1>
+    <hr>
+
+     {% if blogs|length > 0%}
+
+    {% for blog in blogs %}
+    {% include 'blog/partials/_blog.html' %}
+
+    {% endfor %}
+
+    {% else %}
+   
+     <div class="alert alert-warning" role="alert">
+     Bu kategoriye ait bir kayıt bulunmamaktadır :(
+     </div>
+
+
+    {% endif %}
+     </div>
+
+{% endblock %}
